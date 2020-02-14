@@ -1,13 +1,15 @@
 server:
-  port: 18081
+  port: 18088
 spring:
   application:
-    name: goods
+    name: user
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.211.132:3306/changgou_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://192.168.211.132:3306/changgou_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 123456
+  redis:
+    host: 192.168.211.132
 eureka:
   client:
     service-url:
@@ -17,11 +19,4 @@ eureka:
 feign:
   hystrix:
     enabled: true
-# mybatis配置，使用通用Mapper后可以不配置
-#mybatis:
-#  configuration:
-#    #开启驼峰命名
-#    map-underscore-to-camel-case: true
-#  mapper-locations: classpath:mapper/*Mapper.xml
-#  type-aliases-package: com.changgou.goods.pojo
 
